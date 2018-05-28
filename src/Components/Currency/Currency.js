@@ -1,16 +1,15 @@
 import React from 'react';
 
 
-class FetchCurrency extends React.Component {
+class Currency extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-		};
+		this.state = {};
 	}
 
-	componentDidMount(){
-		return fetch('http://data.fixer.io/api/latest?access_key=2e51a94cffe167d8552c581636716725&symbols=CAD&format=1')
+	fetchCurrency = () => {
+		fetch('http://data.fixer.io/api/latest?access_key=2e51a94cffe167d8552c581636716725&symbols=CAD&format=1')
 			.then((response) => response.json())
 			.then((result) => {
 				this.setState({
@@ -19,22 +18,24 @@ class FetchCurrency extends React.Component {
 				})
 			})
 			.catch((error) => {
-				this.setState({
-					fetchResult: error
-				})
-			});
+				alert(error)
+			})
 	}
+
+	componentDidMount() {
+		this.fetchCurrency();
+	}
+	
 	render() {
-		return (
+	return (
 		<div>
-			<h2>Currency conversion</h2>
-			<p>1 EUR = {this.state.rate} CAD</p>
-			<p>Updated at: {this.state.date}</p>
-			<button>Update</button>
-			</div>
-			)
-	}
+			<h2> Currency rate < /h2> 
+			<p> 1 EUR = {this.state.rate} CAD </p> 
+			<p> Updated at: {this.state.date} </p> 
+			<button onClick={this.fetchCurrency}>Update</button> 
+		</div>
+	)
+		}
 }
 
-
-export default FetchCurrency;
+export default Currency;
