@@ -41,7 +41,7 @@ class Note extends React.Component {
 			<div className="note">
 			<p>Anteckning</p>
 			<button onClick ={this.edit} id="edit">Edit</button>
-			<button onClick={this.remove} id="delete">Delete</button>
+			<button onClick={this.delete} id="delete">Delete</button>
 			</div>
 		)
 	}
