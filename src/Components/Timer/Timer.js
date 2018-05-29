@@ -5,29 +5,38 @@ class Timer extends React.Component {
 		super(props);
 		this.state = {
 			minutes: 300/60,
-			seconds: 300 % 60
+			seconds: "0" + 300 % 60
 		};
 	}
 
 	startTimer = () => {
-		let duration = 300
-			setInterval(() => {
+		let duration = 299;
+		let countdown = setInterval(() => {
 			this.setState({minutes: Math.trunc(duration / 60)});
 			this.setState({seconds: (duration % 60)});
+			if (duration < 10 || duration === 0){
+					this.setState({seconds: "0" + (duration % 60)});
+					}
 			duration = duration -1;
+			
+			if (duration < 0){
+				clearInterval(countdown);
+			}
 		}, 1000);
 	}
 	
-	stopTimer = () => {
-		clearInterval();
+	resetTimer = () => {
+		clearInterval(this.startTimer.countdown);
+		this.setState({minutes: 300 / 60});
+		this.setState({seconds: "0" + 300 % 60});
 	}
 						
 	render() {
 		return (
 		<div>
-			<h2>{this.state.minutes} : {this.state.seconds}</h2>
+			<h2>0{this.state.minutes} : {this.state.seconds}</h2>
 			<button onClick={this.startTimer}>Start timer</button>
-			<button onClick={this.stopTimer}>Stop timer</button>
+			<button onClick={this.resetTimer}>Reset timer</button>
 		</div>
 		)
 	}
