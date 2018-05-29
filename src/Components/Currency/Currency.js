@@ -18,7 +18,7 @@ class Currency extends React.Component {
 				})
 			})
 			.catch((error) => {
-				alert(error)
+				alert(`Something went wrong! ${error}`)
 			})
 	}
 
