@@ -14,34 +14,32 @@ class Note extends React.Component {
 		});
 	}
 	
-	delete = () => {
-		alert("Deleting!");
+	handleChange = (event) => {
+		    this.setState({value: event.target.value});
 	}
 	
-	save = () => {
-		alert("Saved!");
-	}
-	renderForm = () =>{
-	}
-	
-	renderDisplay = () => {
+	save = (event) => {
+		event.preventDefault();
+		localStorage.setItem('Note', this.state.value);
+		this.setState({
+			editing: false
+		});
 	}
 	
 	render() {
 		if(this.state.editing){
 			return <div className="note">
 			<form>
-			<textarea/>
-			<button onClick={this.save}>Save</button>
+			<textarea value={this.state.value} onChange={this.handleChange}/>
+			<input type="submit" onClick={this.save} value="Save"/>
 			</form>
 		</div>
 		}
 		else {
 			return <div className="note">
 			<h2>Note</h2>
-			<p>Anteckning</p>
+			<p>{localStorage.getItem('Note')}</p>
 			<button onClick ={this.edit} id="edit">Edit</button>
-			<button onClick={this.delete} id="delete">Delete</button>
 			</div>
 		}
 	}
