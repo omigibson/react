@@ -11,11 +11,13 @@ class App extends React.Component {
     return (
       <div className="App">
 		<header><h1>Dashboard</h1></header>
-		<section><Currency/></section>
-		<section><Timer/></section>
-		<section><Clock/></section>
-		<section><Note/></section>
-		<section><Weather/></section>
+		<section className="dashboard">
+		<Currency/>
+		<Timer/>
+		<Clock/>
+		<Note/>
+		<Weather/>
+		</section>
       </div>
     );
   }

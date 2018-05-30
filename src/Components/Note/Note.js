@@ -4,7 +4,8 @@ class Note extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			editing: false
+			editing: false,
+			note: 'Write your note here'
 		}
 
 	}
@@ -15,32 +16,41 @@ class Note extends React.Component {
 	}
 	
 	handleChange = (event) => {
-		    this.setState({value: event.target.value});
+		    this.setState({note: event.target.value});
 	}
 	
 	save = (event) => {
 		event.preventDefault();
-		localStorage.setItem('Note', this.state.value);
+		localStorage.setItem('Note', this.state.note);
 		this.setState({
 			editing: false
 		});
+	}
+	
+	componentDidMount() {
+		const note = localStorage.getItem('Note');
+		if(note){
+			this.setState({ note: note });
+		}
 	}
 	
 	render() {
 		if(this.state.editing){
 			return <div className="note">
 			<form>
-			<textarea value={this.state.value} onChange={this.handleChange}/>
+			<textarea value={this.state.note} onChange={this.handleChange}/>
 			<input type="submit" onClick={this.save} value="Save"/>
 			</form>
 		</div>
 		}
 		else {
-			return <div className="note">
+			return (
+				<section>
 			<h2>Note</h2>
-			<p>{localStorage.getItem('Note')}</p>
+			<p>{this.state.note}</p>
 			<button onClick ={this.edit} id="edit">Edit</button>
-			</div>
+			</section>
+				)
 		}
 	}
 }

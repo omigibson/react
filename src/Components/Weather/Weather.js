@@ -31,7 +31,7 @@ class Weather extends React.Component {
 
 	render() {
 	return (
-		<div>
+		<section>
 			<h2>Weather in Stockholm</h2>
 			<h3>{this.state.main}</h3>
 		<img src={`http://openweathermap.org/img/w/${this.state.icon}.png`} alt="Weather icon" />
@@ -41,7 +41,7 @@ class Weather extends React.Component {
 				<li><p>Humidity: {this.state.humidity}%</p></li>
 				<li><p>Wind: {this.state.wind} m/s</p></li>
 			</ul>
-		</div>
+		</section>
 	)
 	}
 }

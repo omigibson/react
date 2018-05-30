@@ -28,12 +28,12 @@ class Currency extends React.Component {
 	
 	render() {
 	return (
-		<div>
+		<section>
 			<h2> Currency rate < /h2> 
 			<p> 1 EUR = {this.state.rate} CAD </p> 
 			<p> Updated at: {this.state.date} </p> 
 			<button onClick={this.fetchCurrency}>Update</button> 
-		</div>
+		</section>
 	)
 		}
 }

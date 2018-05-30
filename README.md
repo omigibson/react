@@ -5,6 +5,7 @@ My name is Omi Gibba and I am a Front End Developer student at Medieinstitutet, 
 This is a simple dashboard application that I've built with React. The purpose of this exercise was to learn how to handle `state` and `props` in React.
 
 The dashboard has five components:
+
 1. It shows the currency exchange rate for EUR - CAD. Currency rates are fetched from https://fixer.io.
 2. A timer that counts down from 5 minutes.
 3. A clock that shows the current time.
