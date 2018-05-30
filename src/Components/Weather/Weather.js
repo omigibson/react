@@ -14,6 +14,7 @@ class Weather extends React.Component {
 				this.setState({
 					main: result.weather[0].main,
 					description: result.weather[0].description,
+					icon: result.weather[0].icon,
 					temperature: result.main.temp,
 					humidity: result.main.humidity,
 					wind: result.wind.speed
@@ -33,8 +34,9 @@ class Weather extends React.Component {
 		<div>
 			<h2>Weather in Stockholm</h2>
 			<h3>{this.state.main}</h3>
+		<img src={`http://openweathermap.org/img/w/${this.state.icon}.png`} alt="Weather icon" />
 			<ul>
-				<li><p>{this.state.description}</p></li>
+				<li><p>Description: {this.state.description}</p></li>
 				<li><p>Temperature: {this.state.temperature} degrees Celcius</p></li>
 				<li><p>Humidity: {this.state.humidity}%</p></li>
 				<li><p>Wind: {this.state.wind} m/s</p></li>

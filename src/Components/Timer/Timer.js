@@ -34,9 +34,10 @@ class Timer extends React.Component {
 	render() {
 		return (
 		<div>
+			<h2>Countdown</h2>
 			<h2>0{this.state.minutes} : {this.state.seconds}</h2>
-			<button onClick={this.startTimer}>Start timer</button>
-			<button onClick={this.resetTimer}>Reset timer</button>
+			<button onClick={this.startTimer}>Start</button>
+			<button onClick={this.resetTimer}>Reset</button>
 		</div>
 		)
 	}

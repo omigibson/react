@@ -38,6 +38,7 @@ class Note extends React.Component {
 		}
 		else {
 			return <div className="note">
+			<h2>Note</h2>
 			<p>Anteckning</p>
 			<button onClick ={this.edit} id="edit">Edit</button>
 			<button onClick={this.delete} id="delete">Delete</button>
