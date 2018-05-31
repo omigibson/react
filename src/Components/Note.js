@@ -5,7 +5,7 @@ class Note extends React.Component {
 		super(props);
 		this.state = {
 			editing: false,
-			note: 'Write your note here'
+			note: 'Very important note. Remember to do important stuff.'
 		}
 
 	}
@@ -36,20 +36,27 @@ class Note extends React.Component {
 	
 	render() {
 		if(this.state.editing){
-			return <div className="note">
-			<form>
-			<textarea value={this.state.note} onChange={this.handleChange}/>
-			<input type="submit" onClick={this.save} value="Save"/>
-			</form>
-		</div>
+			return (
+				<section>
+					<h2>Note</h2>
+					<form>
+					<div className="content">
+					<textarea value={this.state.note} onChange={this.handleChange}/>
+					</div>
+					<input type="submit" className="btn btn-info" onClick={this.save} value="Save"/>
+					</form>
+			</section>
+				)
 		}
 		else {
 			return (
 				<section>
-			<h2>Note</h2>
-			<p>{this.state.note}</p>
-			<button onClick ={this.edit} id="edit">Edit</button>
-			</section>
+					<h2>Note</h2>
+					<div className="content">
+						<p>{this.state.note}</p>
+					</div>
+					<button type="button" className="btn btn-info" onClick ={this.edit} id="edit">Edit</button>
+				</section>
 				)
 		}
 	}

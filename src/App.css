@@ -1,18 +1,37 @@
 header {
+	background-color: rgb(4,39,59, 0.6);
+	color: #FFF;
 	text-align: center;
-	padding-top: 2rem;
+	padding: .8rem;
 }
 
-section {
-	text-align: center;
-	width: 80%;
-	padding: 1rem;
-	margin: 0px auto;
+h1, h2, h3 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 0;
+}
+
+.btn {
+	margin: .4rem;
 }
 
 .dashboard {
-  display: flex;
+	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 80%;
+	padding: 1rem;
+	margin: 0px auto;
+	text-align: center;
 }
 
 body {
@@ -20,16 +39,55 @@ body {
 	background-size: cover;
 }
 
-section section {
-	background-color: rgb(252,214,87,0.3);
+section {
+	background-color: rgb(255, 255, 255, 0.6);
 	width: 43%;
-	border: 2px solid black;
+	padding: 1rem;
 	margin: 2rem;
-	-webkit-box-shadow: 20px 18px 25px -4px rgba(0,0,0,0.65);
--moz-box-shadow: 20px 18px 25px -4px rgba(0,0,0,0.65);
-box-shadow: 20px 18px 25px -4px rgba(0,0,0,0.65);
+	border-radius: 1rem;
+	-webkit-box-shadow: 20px 18px 25px -4px rgba(0, 0, 0, 0.65);
+	-moz-box-shadow: 20px 18px 25px -4px rgba(0, 0, 0, 0.65);
+	box-shadow: 20px 18px 25px -4px rgba(0, 0, 0, 0.65);
+}
+
+.content {
+	background-color: rgb(255, 255, 255, 0.5);
+	padding: .5rem;
+	border-radius: .5rem;
+	margin: .5rem;
+	
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.updateMsg {
+	animation: fade 2s linear forwards;
+}
+
+@keyframes fade {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+.timer {
+	font-size: 1.75rem;
+}
+
+.clock {
+	font-size: 2.75rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.finished {
+	background-color: rgb(255,25,39,0.6);
 }
 
 ul {
 	list-style: none;
+	padding: 0;
 }

@@ -5,7 +5,10 @@ class Timer extends React.Component {
 		super(props);
 		this.state = {
 			minutes: 300/60,
-			seconds: "0" + 300 % 60
+			seconds: '0' + 300 % 60,
+			startButton: '',
+			resetButton: 'hidden',
+			whenFinished: ''
 		};
 	}
 
@@ -21,6 +24,9 @@ class Timer extends React.Component {
 			
 			if (duration < 0){
 				clearInterval(countdown);
+				this.setState({startButton: 'hidden'});
+				this.setState({resetButton: ''});
+				this.setState({whenFinished: 'finished'})
 			}
 		}, 1000);
 	}
@@ -29,15 +35,20 @@ class Timer extends React.Component {
 		clearInterval(this.startTimer.countdown);
 		this.setState({minutes: 300 / 60});
 		this.setState({seconds: "0" + 300 % 60});
+		this.setState({startButton: ''});
+		this.setState({resetButton: 'hidden'});
+		this.setState({whenFinished: ''});
 	}
 						
 	render() {
 		return (
-		<section>
+		<section className={this.state.whenFinished}>
 			<h2>Countdown</h2>
-			<h2>0{this.state.minutes} : {this.state.seconds}</h2>
-			<button onClick={this.startTimer}>Start</button>
-			<button onClick={this.resetTimer}>Reset</button>
+			<div className= "content">
+				<p className="timer">0{this.state.minutes} : {this.state.seconds}</p>
+			</div>
+			<button type="button" className={`btn btn-info ${this.state.startButton}`} onClick={this.startTimer}>Start</button>
+			<button type="button" className={`btn btn-primary ${this.state.resetButton}`} onClick={this.resetTimer}>Reset</button>
 		</section>
 		)
 	}

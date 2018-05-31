@@ -5,7 +5,8 @@ class Currency extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+		};
 	}
 
 	fetchCurrency = () => {
@@ -14,7 +15,8 @@ class Currency extends React.Component {
 			.then((result) => {
 				this.setState({
 					rate: result.rates.CAD,
-					date: result.date
+					date: result.date,
+					updateMsg: 'updateMsg'
 				})
 			})
 			.catch((error) => {
@@ -25,14 +27,23 @@ class Currency extends React.Component {
 	componentDidMount() {
 		this.fetchCurrency();
 	}
+
+	resetMsg = () => {
+		this.setState({updateMsg: 'invisible'});
+		this.fetchCurrency();
+		
+	}
 	
 	render() {
 	return (
 		<section>
 			<h2> Currency rate < /h2> 
-			<p> 1 EUR = {this.state.rate} CAD </p> 
-			<p> Updated at: {this.state.date} </p> 
-			<button onClick={this.fetchCurrency}>Update</button> 
+			<p className={this.state.updateMsg}>Updated!</p>
+			<div className="content">
+				<p><strong> 1 EUR = {this.state.rate} CAD </strong></p> 
+				<small><p> Updated at: {this.state.date} </p> </small>
+			</div>
+			<button type="button" className="btn btn-info" onClick={this.resetMsg}>Update</button> 
 		</section>
 	)
 		}
