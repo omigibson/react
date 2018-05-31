@@ -12,6 +12,5 @@ The dashboard has five components:
 4. A note where the user can store whatever text they like.
 5. Information about todays weather in Stockholm, Sweden. The weather data is fetched from https://openweathermap.org/.
 
-Link to Github repository
-[Link to live page](https://github.com/omigibson/react)
-(http://omigibba.se/dashboard/index.html)
+[Link to Github repository](https://github.com/omigibson/react)
+[Link to live page](http://omigibba.se/dashboard/index.html)
