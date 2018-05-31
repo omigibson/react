@@ -1,0 +1,120 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif
+}
+
+header {
+	background-color: rgba(4, 39, 59, .6);
+	color: #fff;
+	text-align: center;
+	padding: .8rem
+}
+
+h1,
+h2,
+h3 {
+	font-family: Lato, sans-serif;
+	font-weight: 700;
+	margin-bottom: 0
+}
+
+h3 {
+	font-weight: 400
+}
+
+p {
+	font-family: Roboto, sans-serif;
+	margin-bottom: 0
+}
+
+.btn {
+	margin: .4rem
+}
+
+.dashboard {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	width: 80%;
+	padding: 1rem;
+	margin: 0 auto;
+	text-align: center
+}
+
+body {
+	background-image: url(../media/background1.a1d6b392.jpg);
+	background-size: cover
+}
+
+section {
+	background-color: hsla(0, 0%, 100%, .6);
+	width: 43%;
+	padding: 1rem;
+	margin: 2rem;
+	border-radius: 1rem;
+	-webkit-box-shadow: 20px 18px 25px -4px rgba(0, 0, 0, .65);
+	box-shadow: 20px 18px 25px -4px rgba(0, 0, 0, .65)
+}
+
+.content {
+	background-color: hsla(0, 0%, 100%, .5);
+	padding: .5rem;
+	border-radius: .5rem;
+	margin: .5rem
+}
+
+.invisible {
+	visibility: hidden
+}
+
+.updateMsg {
+	-webkit-animation: fade 2s linear forwards;
+	animation: fade 2s linear forwards
+}
+
+@-webkit-keyframes fade {
+	0%,
+	to {
+		opacity: 0
+	}
+	50% {
+		opacity: 1
+	}
+}
+
+@keyframes fade {
+	0%,
+	to {
+		opacity: 0
+	}
+	50% {
+		opacity: 1
+	}
+}
+
+.timer {
+	font-size: 1.75rem
+}
+
+.clock {
+	font-size: 2.75rem
+}
+
+.hidden {
+	display: none
+}
+
+.finished {
+	background-color: rgba(255, 25, 39, .6)
+}
+
+ul {
+	list-style: none;
+	padding: 0
+}
+
+/*# sourceMappingURL=main.515c6198.css.map*/
