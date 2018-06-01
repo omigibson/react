@@ -17,7 +17,7 @@ class Timer extends React.Component {
 		let countdown = setInterval(() => {
 			this.setState({minutes: Math.trunc(duration / 60)});
 			this.setState({seconds: (duration % 60)});
-			if (duration < 10 || duration === 0){
+			if ((duration % 60) < 10 || duration === 0){
 					this.setState({seconds: "0" + (duration % 60)});
 					}
 			duration = duration -1;

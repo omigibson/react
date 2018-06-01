@@ -13,4 +13,5 @@ The dashboard has five components:
 5. Information about todays weather in Stockholm, Sweden. The weather data is fetched from https://openweathermap.org/.
 
 [Link to Github repository](https://github.com/omigibson/react)
+
 [Link to live page](http://omigibba.se/dashboard/index.html)
